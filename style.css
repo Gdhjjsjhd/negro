@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Estilos gerais do corpo */
+body {
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Estilos para o título principal */
+h1 {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Estilos para as divs "pessoa" */
+div {
+    background-color: #fff;
+    border-radius: 15px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para as divs específicas das pessoas */
+.pessoa1, .pessoa2, .pessoa3, .pessoa4 {
+    width: 80%;
+    max-width: 900px;
+    height: 250px;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.pessoa1:hover, .pessoa2:hover, .pessoa3:hover, .pessoa4:hover {
+    background-color: #e6e6e6;
+}
+
+/* Estilos para as imagens */
+img {
+    border-radius: 100px;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito para as imagens */
+.pessoa1:hover img, .pessoa2:hover img, .pessoa3:hover img, .pessoa4:hover img {
+    transform: scale(1.1);
+}
+
+/* Estilos para o modal */
+.modal {
+    display: none; /* Oculta os modais por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escurecido */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Efeito de fade-in ao abrir o modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Estilos para o botão de fechar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-right: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Estilos para o texto do modal */
+.modal-content h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Responsividade: Ajustar para telas menores */
+@media (max-width: 768px) {
+    .pessoa1, .pessoa2, .pessoa3, .pessoa4 {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    img {
+        margin-bottom: 20px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+
